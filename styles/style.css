@@ -1,0 +1,242 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Droid Sans Mono', monospace;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: antiquewhite;
+}
+
+.nav-logo h2 {
+    text-shadow: 0 2px 2px #777;
+    margin-bottom: 5px;
+}
+
+.nav-logo p {
+    font-weight: bold;
+}
+
+.nav-links ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    color: green;
+}
+
+#add-task {
+    border: 1px solid #000;
+    padding: 5px 15px;
+    background-color: buttonface;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#add-task:hover {
+    background-color: rgb(255, 128, 82);
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 30px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.main-header h1 {
+    text-shadow: 0 2px 2px #777;
+}
+
+main hr {
+    margin-bottom: 20px;
+}
+
+.about-container {
+    background-color: antiquewhite;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about-container h1,
+.about-container p {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.about-container a {
+    color: red;
+}
+
+.task-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.task {
+    padding: 20px;
+    background-color: rgb(255, 128, 82);
+}
+
+.task a {
+    text-decoration: none;
+    color: #000;
+}
+
+.task-info h2 {
+    margin-bottom: 10px;
+}
+
+.task-info p {
+    font-weight: bold;
+    word-break: break-word;
+}
+
+.form-container form {
+    background-color: rgb(255, 128, 82);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-container form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-container form input {
+    padding: 10px;
+    border: 1px solid #000;
+    outline: none;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-family: 'Droid Sans Mono', monospace;
+}
+
+.form-container form textarea {
+    resize: none;
+    border: 1px solid #000;
+    outline: none;
+    height: 120px;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: 'Droid Sans Mono', monospace;
+    margin-bottom: 15px;
+}
+
+.form-container form button {
+    padding: 10px;
+    border: 1px solid #000;
+    font-size: 1rem;
+    font-family: 'Droid Sans Mono', monospace;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.details {
+    background-color: rgb(255, 128, 82);
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.details h2, .details p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.details input[type="submit"] {
+    width: 100px;
+    text-align: center;
+    margin-top: 10px;
+    padding: 7px;
+    bordeR: 1px solid #000;
+    cursor: pointer;
+    font-family: 'Droid Sans Mono', monospace;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: antiquewhite;
+}
+
+footer h4 {
+    text-align: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: red;
+}
+
+/* Media Query */
+@media (max-width: 600px) {
+    header nav {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 20px;
+    }
+
+    .nav-logo h2,
+    .nav-logo p {
+        text-align: center;
+    }
+
+    .nav-links ul {
+        justify-content: center;
+    }
+
+    main {
+        margin-bottom: 50px;
+    }
+
+    .task-container {
+        grid-template-columns: 1fr;
+    }
+
+    .task-info h2,
+    .task-info p {
+        text-align: center;
+    }
+
+    .form-container form {
+        padding: 30px;
+    }
+}
