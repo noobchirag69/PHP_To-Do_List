@@ -2,28 +2,20 @@
 <?php 
 	include('config/db_connect.php');
 
-	// Delete
 	if (isset($_POST['Delete'])) {
 		$id_to_delete = mysqli_real_escape_string($conn, $_POST['id_to_delete']);
 		$sql = "DELETE FROM `todo` WHERE id = '$id_to_delete'";
 		if (mysqli_query($conn , $sql)) {
-			// Success
 			header('Location: index.php');
 		} else {
-			// Failure
 			echo 'Query Error: ' . mysqli_error($conn);
 		}
 	}
 
-	// Check GET request id param
 	if (isset($_GET['id'])) {
-		// Escape SQL chars
 		$id = mysqli_real_escape_string($conn, $_GET['id']);
-		// Make SQL
 		$sql = "SELECT * FROM `todo` WHERE `id` = '$id'";
-		// Get the query result
 		$result = mysqli_query($conn, $sql);
-		// Fetch result in array format
 		$todo = mysqli_fetch_assoc($result);
 		mysqli_free_result($result);
 		mysqli_close($conn);
@@ -52,7 +44,7 @@
 			        <input type="submit" name="Delete" value="Delete">
 			    </form>
             <?php else: ?>
-			    <h5>No such note exists.</h5>
+			    <h1>No such note exists!</h1>
 		    <?php endif ?>
         </div>
     </main>
