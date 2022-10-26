@@ -1,20 +1,10 @@
 <!-- PHP -->
 <?php
-    include('config/db_connect.php');
-
-    // All todos  
+    include('config/db_connect.php'); 
     $sql = 'SELECT * FROM `todo` ORDER BY `created_at`';
-    
-    // Get the result set (set of rows)
     $result = mysqli_query($conn, $sql); 
-    
-    // Fetch the resulting rows as an array
     $todo = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    
-    // Free space
     mysqli_free_result($result);
-    
-    // Close results
     mysqli_close($conn);
 ?>
 
